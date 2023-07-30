@@ -1,0 +1,1 @@
+from .fibonacci_series_model import FibonacciSeries
