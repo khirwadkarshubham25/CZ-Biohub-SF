@@ -11,6 +11,7 @@ class FibonacciSeriesService:
 
     def get_data(self, *args, **kwargs):
         try:
+            # Validations for the input
             number = kwargs['request'].query_params.get('number')
             if int(number) < 1 or not number:
                 return {"message": "Invalid input provided. Please provide a valid integer."}, status.HTTP_400_BAD_REQUEST
@@ -23,12 +24,14 @@ class FibonacciSeriesService:
 
     @staticmethod
     def get_fibonacci_series(n):
+        # Check if the series for tha number is already in the db
         result = FibonacciSeries.objects.filter(number=n)
 
         if result.exists():
             if n == result[0].number:
                 return result[0].series
 
+        # Generate series for the number not in db.
         data = ['0', '1']
         for i in range(2, n):
             data.append(str(int(data[-1]) + int(data[-2])))
