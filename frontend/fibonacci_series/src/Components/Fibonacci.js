@@ -9,12 +9,14 @@ const Fibonacci = () =>{
     const [isError, setIsError] = useState(undefined);
     const inputRef = useRef(undefined);
     const navigate = useNavigate();
-
+    // Get data from the API
     const callApi = (number) => {
         return fetch(
             `http://localhost:8000/fibonacci_series?number=${number}`
         )
     }
+
+    // On success navigate to the result page to display series or show error for the invalid inputs.
     const clickSubmit = () => {
         console.log(inputRef.current.value);
         if(inputRef.current){
