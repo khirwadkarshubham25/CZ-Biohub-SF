@@ -43,3 +43,6 @@ Reactjs
 1. I have 3 years of experience designing backend using Python Django Framework. I have used the skills I gained during that time to design backend application
 2. To design frontend I have used ChatGPT, StackOverflow and other resources.
 3. To further reduce computation time for series generation, another logic that we can use is to use a series that has already been generated and stored in the database nearest to the input number given.
+
+
+Github Project Link: https://github.com/khirwadkarshubham25/CZ-Biohub-SF
